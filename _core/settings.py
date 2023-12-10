@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "django_browser_reload",
     "home",
+    "blog",
+    "stock",
 ]
 
 MIDDLEWARE = [
@@ -61,6 +63,8 @@ CRISPY_TEMPLATE_PACK = "daisyui"
 
 TAILWIND_APP_NAME = "static"
 TAILWIND_CSS_PATH = "static/css/out/styles.css"
+
+MEDIA_ROOT = BASE_DIR / "static/"
 
 INTERNAL_IPS = [
     "127.0.0.1",
