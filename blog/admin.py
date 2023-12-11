@@ -6,6 +6,7 @@ from .models import Post, Category
 class PostAdmin(admin.ModelAdmin):
     list_display = (
         "title",
+        "slug",
         "body",
     )
     prepopulated_fields = {"slug": ("title",)}
@@ -14,7 +15,7 @@ class PostAdmin(admin.ModelAdmin):
 class CategoryAdmin(admin.ModelAdmin):
     list_display = (
         "title",
-        "body",
+        "slug",
     )
     prepopulated_fields = {"slug": ("title",)}
 
