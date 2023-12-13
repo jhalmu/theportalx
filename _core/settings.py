@@ -28,13 +28,14 @@ SECRET_KEY = "django-insecure-6ii6@pr!l+!c)drf%^wrf%tdg2@qhl18y)_9mdqe7(as07!ozo
 DEBUG = True
 
 ALLOWED_HOSTS = [
-'fatdomaindev.cyou',
-'www.fatdomaindev.cyou'
-'https://fatdomaindev.cyou',
-'https://www.fatdomaindev.cyou'
+    "localhost",
+    "127.0.0.1",
+    "fatdomaindev.cyou",
+    "www.fatdomaindev.cyou" "https://fatdomaindev.cyou",
+    "https://www.fatdomaindev.cyou",
 ]
-CSRF_COOKIE_DOMAIN = '.fatdomaindev.cyou'
-CSRF_TRUSTED_ORIGINS = ['https://*.fatdomaindev.cyou','https://*.127.0.0.1']
+CSRF_COOKIE_DOMAIN = ".fatdomaindev.cyou"
+CSRF_TRUSTED_ORIGINS = ["https://*.fatdomaindev.cyou", "https://*.127.0.0.1"]
 
 # Application definition
 

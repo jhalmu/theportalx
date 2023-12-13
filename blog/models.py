@@ -9,6 +9,9 @@ class Category(models.Model):
     title = models.CharField(max_length=20)
     slug = models.SlugField(null=False, unique=True)
 
+    def __str__(self):
+        return self.title
+
 
 CHOICE = ((True, _("Yes")), (False, _("No")))
 
@@ -31,7 +34,7 @@ class Post(models.Model):
     last_modified = models.DateTimeField(auto_now=True)
     categories = models.ManyToManyField("Category", related_name="posts")
     author = models.ForeignKey(User, on_delete=models.CASCADE)
-    upload = models.ImageField(upload_to="photos/% Y/% m/% d/")
+    upload = models.ImageField(upload_to="photos/%Y/%m/%d/")
     photo_url = models.CharField(max_length=100)
 
     class Meta:
