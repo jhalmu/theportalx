@@ -1,10 +1,11 @@
 from django.shortcuts import render
 
-# from .models import Blog_page
+from .models import Post
 
 
 def blog_view(request):
-    return render(request, "blog/index.html", {})
+    context = {"posts": Post.objects.all()}
+    return render(request, "blog/index.html", context)
 
 
 # def about_view(request):
