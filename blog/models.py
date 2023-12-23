@@ -1,8 +1,10 @@
-from django.contrib.auth.models import User
+# from django.contrib.auth.models import User
 from django.db import models
 from django.db.models.functions import Lower
 from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
+
+from users.models import CustomUser
 
 
 class Category(models.Model):
@@ -33,7 +35,7 @@ class Post(models.Model):
     published_on = models.DateTimeField(default=timezone.now)
     last_modified = models.DateTimeField(auto_now=True)
     categories = models.ManyToManyField("Category", related_name="posts")
-    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    author = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
     upload = models.ImageField(upload_to="photos/%Y/%m/%d/")
     photo_url = models.CharField(max_length=100)
 
@@ -49,7 +51,8 @@ class Post(models.Model):
 
 
 class Comment(models.Model):
-    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    author = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
+    post = models.ForeignKey("Post", on_delete=models.CASCADE)
     post = models.ForeignKey("Post", on_delete=models.CASCADE)

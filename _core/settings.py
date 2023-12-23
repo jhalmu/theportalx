@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     "home",
     "blog",
     "stock",
+    "users",
 ]
 
 MIDDLEWARE = [
@@ -69,6 +70,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = "_core.urls"
+
+AUTH_USER_MODEL = "users.CustomUser"
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "daisyui"
 CRISPY_TEMPLATE_PACK = "daisyui"
