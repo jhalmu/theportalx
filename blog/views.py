@@ -1,14 +1,20 @@
+from django.views import generic 
+#import ListView, DetailView
 from django.shortcuts import render
 
 from .models import Post
 
 
-def blog_view(request):
-    context = {"posts": Post.objects.all()}
-    return render(request, "blog/index.html", context)
+# def blog_view(request):
+#    context = {
+#        "posts": Post.objects.all()
+#        }
+#    return render(request, "blog/index.html", context)
 
+class PostList(generic.ListView):
+    queryset = Post.objects.filter(published=True).order_by('-created_on')
+    template_name = 'blog/index.html'
 
-# def about_view(request):
-#    context = {"abouts": About_page.objects.all()}
-#    return render(request, "home/about.html", context)
-#    return render(request, "home/about.html", context)
+class PostDetail(generic.DetailView):
+    model = Post
+    template_name = 'blog/post_detail.html'

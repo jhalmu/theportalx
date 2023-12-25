@@ -7,7 +7,7 @@
     Blog
   </span>
 </h1>
-{% for post in posts %}
+{% for post in post_list %}
 <article class="card lg:card-side bg-base-100 p-4"> 
   
   <figure class=" p-4 "><img src="https://fatdomaindev.cyou/static/{{ post.upload }}" class="rounded-xl h-96 w-full object-cover md:h-full md:w-96" alt="Shoes" /></figure>
@@ -26,7 +26,8 @@
         >{{ post.title }}</a
       >
     </h2>
-    <p class="w-96">{{ post.body }}</p>
+    <p class="w-96">{{post.body|slice:":200" }}</p>
+    <a href="{% url 'post_detail' post.slug  %}" class="btn btn-primary">Read More &rarr;</a>
   </div>
 </article>
 {% endfor %} {% endblock content %}

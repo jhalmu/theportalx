@@ -6,6 +6,9 @@ from .models import About_page
 def home_view(request):
     return render(request, "home/index.html", {})
 
+def contact_view(request):
+    return render(request, "home/contacts.html", {})
+
 
 def about_view(request):
     context = {"abouts": About_page.objects.all()}

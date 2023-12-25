@@ -11,16 +11,17 @@ class CustomUserAdmin(UserAdmin):
     form = CustomUserChangeForm
     model = CustomUser
     list_display = (
-        "email",
+        "full_name",
         "is_staff",
         "is_active",
-        "full_name",
+        "email",
+        
     )
     list_filter = (
         "email",
         "is_staff",
         "is_active",
-        "full_name",
+        "nick_name",
     )
     fieldsets = (
         (
