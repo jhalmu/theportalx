@@ -26,12 +26,11 @@ SECRET_KEY = "django-insecure-6ii6@pr!l+!c)drf%^wrf%tdg2@qhl18y)_9mdqe7(as07!ozo
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
 ALLOWED_HOSTS = [
     "localhost",
     "127.0.0.1",
     "fatdomaindev.cyou",
-    "www.fatdomaindev.cyou" "https://fatdomaindev.cyou",
+    "www.fatdomaindev.cyou", "https://fatdomaindev.cyou",
     "https://www.fatdomaindev.cyou",
 ]
 CSRF_COOKIE_DOMAIN = ".fatdomaindev.cyou"
@@ -49,7 +48,6 @@ INSTALLED_APPS = [
     # own
     "django_htmx",
     "crispy_forms",
-    "crispy_tailwind",
     "django_browser_reload",
     "home",
     "blog",
@@ -73,11 +71,11 @@ ROOT_URLCONF = "_core.urls"
 
 AUTH_USER_MODEL = "users.CustomUser"
 
-CRISPY_ALLOWED_TEMPLATE_PACKS = "daisyui"
-CRISPY_TEMPLATE_PACK = "daisyui"
+# CRISPY_ALLOWED_TEMPLATE_PACKS = "daisyui"
+# CRISPY_TEMPLATE_PACK = "daisyui"
 
-TAILWIND_APP_NAME = "static"
-TAILWIND_CSS_PATH = "static/css/out/styles.css"
+# TAILWIND_APP_NAME = "static"
+# TAILWIND_CSS_PATH = "static/css/out/styles.css"
 
 MEDIA_ROOT = BASE_DIR / "static/"
 
@@ -132,7 +130,6 @@ AUTH_PASSWORD_VALIDATORS = [
         "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
     },
 ]
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
