@@ -1,15 +1,12 @@
 {% extends '../base/index.html' %} {% block content %}
 
-<div>
 
-  <figure class=" p-4 "><img src="https://fatdomaindev.cyou/static/{{ post.upload }}" class="rounded-xl h-96 md:h-100 lg:h-120 " alt="Shoes" /></figure>
 
-</div>
+<article class="card lg:card-side p-4 prose"> 
 
-<article class="card lg:card-side bg-base-100 p-4"> 
-  
+  <img src="https://fatdomaindev.cyou/static/{{ post.upload }}" class="rounded-xl object-top h-96 min-h-96 min-w-120 w-120" alt="Shoes" />
 
- <div class="card-body md:flex prose lg:prose-xl">
+ <div class="border-l-2 pl-10 min-w-96">
     <div class=" ">
       <a
         class="text-slate-500 font-bold "
@@ -19,12 +16,9 @@
       <small class="text-muted font-semibold">{{ post.published_on|date:"F d, Y" }}</small>
     </div>
     <h2 class="card-title mb-5 mt-5 text-4xl">
-      <a
-        href="#"
-        >{{ post.title }}</a
-      >
+        {{ post.title }}
     </h2>
-    <p class="w-full p-5">{{post.body }}</p>
+    <p class="w-full">{{post.body }}</p>
     <a href="{% url 'post_detail' post.slug  %}" class="">Back &rarr;</a>
   </div>
 </article>

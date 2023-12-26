@@ -20,14 +20,13 @@
 </head>
 
 <body>
+  <main class="container w-[1200px] mx-auto">
   <header>
     {% include 'partials/nav.html' %}
-  </header>
-  <main>
-    <div class="container mx-auto mt-20 p-10">
+  </header> 
+      <div class="container mx-auto pt-10">
       {% block content %}{% endblock %}
     </div>
-</body>
 </main>
-
+</body>
 </html>

@@ -8,11 +8,11 @@
   </span>
 </h1>
 {% for post in post_list %}
-<article class="card lg:card-side bg-base-100 p-4"> 
-  
-  <figure class=" p-4 "><img src="https://fatdomaindev.cyou/static/{{ post.upload }}" class="rounded-xl h-96 w-full object-cover md:h-full md:w-96" alt="Shoes" /></figure>
- <div class="card-body md:flex">
-    <div class=" ">
+<article class="lg:card lg:card-side lg:p-4"> 
+  <figure class="p-4"><img src="https://fatdomaindev.cyou/static/{{ post.upload }}" class="sm:w-full rounded-xl object-top lg:min-h-64 lg:h-64 lg:min-w-96 lg:w-96 md:size-full" alt="{{ post.upload }}" /></figure>
+ <div class="card-body md:flex"> 
+    
+  <div>
       <a
         class="text-slate-500 font-bold "
         href="#"
@@ -27,7 +27,7 @@
       >
     </h2>
     <p class="w-96">{{post.body|slice:":200" }}</p>
-    <a href="{% url 'post_detail' post.slug  %}" class="btn btn-primary">Read More &rarr;</a>
+    <a href="{% url 'post_detail' post.slug  %}" class="btn btn-primary w-96">Read More &rarr;</a>
   </div>
 </article>
 {% endfor %} {% endblock content %}
