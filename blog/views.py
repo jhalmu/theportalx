@@ -1,5 +1,6 @@
-from django.views import generic 
-#import ListView, DetailView
+from django.views import generic
+
+# import ListView, DetailView
 from django.shortcuts import render
 
 from .models import Post
@@ -11,10 +12,12 @@ from .models import Post
 #        }
 #    return render(request, "blog/index.html", context)
 
+
 class PostList(generic.ListView):
-    queryset = Post.objects.filter(published=True).order_by('-created_on')
-    template_name = 'blog/index.html'
+    queryset = Post.objects.filter(published=True).order_by("-created_on")
+    template_name = "blog_index.html"
+
 
 class PostDetail(generic.DetailView):
     model = Post
-    template_name = 'blog/post_detail.html'
+    template_name = "blog_detail.html"
